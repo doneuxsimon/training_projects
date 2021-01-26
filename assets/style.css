@@ -1,9 +1,56 @@
-/* table {
-    border: red 5px solid;
-} */
+ table {
+     border: red 5px solid;
+     border-collapse: collapse;
+     width: 100%;
+     background-color: rgb(72, 18, 104);
+     color: yellow;
+ }
 
 
-td {
-    padding: 10px;
-    border: dodgerblue 5px solid;
-}
+ td {
+     padding: 5px;
+     border: dodgerblue 2px solid;
+ }
+
+ a {
+     text-decoration: none;
+     color: yellow;
+ }
+
+ a:hover {
+     color: red;
+ }
+
+ form {
+
+
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center;
+ }
+
+ input {
+     text-align: center;
+ }
+
+ button {
+     color: yellow;
+     margin-top: 10px;
+     border-radius: 25px;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     background-color: rgb(0, 255, 136);
+ }
+
+ button:hover {
+     color: violet;
+     background-color: teal;
+ }
+
+ button>a:hover {
+     color: violet;
+     background-color: teal;
+
+ }

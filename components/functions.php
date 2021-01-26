@@ -21,20 +21,22 @@
     return $array;
   }
 
-  // function queryUserById($id){
-  //   $db = createCursor();
+ function queryUserById($id){
+     $db = createCursor();
+     $query = $db->prepare("SELECT id,first_name,last_name,email,account_type,country,password FROM user WHERE id=?");
+     $query->execute([$id]);
+     return $query;
+   }
 
-  //   $query = $db->prepare("SELECT * FROM `users` WHERE id=?");
-  //   $query->execute([$id]);
+  function updateUser($first_name,$last_name,$email,$account_type,$country,$password,$id){
+    $db = createCursor();
+    $query = $db->prepare("UPDATE user SET first_name=?,last_name=?,email=?,account_type=?,country=?,password=?  WHERE id=?");
+    $query->execute([$first_name,$last_name,$email,$account_type,$country,$password,$id]);
+  }
 
-  //   return $query->fetch();
-  // }
-
-  // function editUSer($id, /* ... */){
-    
-  // }
-
-  // function deleteUSer($id){
-
-  // }
-?>
+   function deleteUSer($id){
+    $db = createCursor();
+    $query = $db->prepare("DELETE FROM user WHERE id=?");
+    $query->execute([$id]);
+   }
+ ?>
